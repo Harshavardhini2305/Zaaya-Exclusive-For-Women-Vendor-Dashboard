@@ -1,0 +1,492 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+
+/* Navbar Section */
+.navSection {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    color: white;
+    padding: 0 30px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* Wrapper for Sidebar & Content */
+.collectionSection {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    padding-top: 80px; 
+}
+
+/* Sidebar Section */
+.sideBarSection {
+    width: 250px;
+    height: calc(100vh - 80px);
+    background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    left: 0;
+    top: 80px;
+}
+
+/* Sidebar List */
+.sideBarSection ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sideBarSection ul li {
+    padding: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    background: rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.sideBarSection ul li:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+
+
+
+/* LOGIN AND REGISTER */
+
+/* Main Content */
+.loginSection, .registerSection {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Center both login and register sections */
+.authSection {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    padding: 20px;
+}
+
+/* Authentication Form */
+.authForm {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Form Headings */
+.authForm h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Form Inputs */
+.authForm label {
+    display: block;
+    text-align: left;
+    font-weight: 500;
+    color: #444;
+    margin-top: 10px;
+}
+
+.authForm input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.authForm input:focus {
+    border-color: #ff5f6d;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 95, 109, 0.3);
+}
+
+/* Buttons */
+.authForm button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  margin-left: 5px;
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-align: center; /* Ensures text is centered */
+}
+
+.authForm button:hover {
+    background: linear-gradient(135deg, #ffc371, #ff5f6d);
+    transform: scale(1.05);
+}
+
+.welcome{
+  padding-left: 250px;
+}
+
+
+/* AddFirm.css */
+.form-container {
+  width: 50%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-height: 80vh; /* Prevents form from going off screen */
+}
+.form-title {
+  margin-left: 300px;
+  margin-bottom: 15px;
+
+}
+.section-title{
+  margin-right: 600px;
+  font-size: small;
+}
+/* Scrollable Category Selection */
+.category-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  gap: 15px;
+  max-width: 100%;
+}
+
+/* Always show horizontal scrollbar */
+.category-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.category-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.category-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Scrollable Checkboxes Section */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  max-height: 250px; /* Ensures scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+/* Always show vertical scrollbar */
+.checkbox-group::-webkit-scrollbar {
+  width: 8px;
+}
+
+.checkbox-group::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.checkbox-group::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Make the entire form scrollable if needed */
+.form-container {
+  overflow-y: auto; /* Enables scrolling for the form if needed */
+  max-height: 80vh; /* Prevents form from exceeding viewport */
+}
+
+.checkbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between categories */
+}
+
+
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* ADD PRODUCT */
+
+.addProductSection {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  margin-top: 10px;
+  margin-bottom: 20px;
+ 
+}
+
+.productForm {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ced6df;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Styling for multiple select dropdowns */
+select[multiple] {
+  height: auto;
+  min-height: 60px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+/* Custom scrollbar for multiple select */
+select[multiple]::-webkit-scrollbar {
+  width: 8px;
+}
+
+select[multiple]::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+select[multiple]::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+select[multiple]::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.FileUploadContainer {
+  font-weight: bold;
+  color: black;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+} 
+ 
+.btnContainer {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 5px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ffc371, #ff5f6d);
+  transform: scale(1.05);
+}
+
+
+
+/* Page Container */
+.product-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* Center Everything */
+  width: 100%;
+}
+
+/* Fix Heading Position */
+.page-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative; /* Ensures it doesn't move */
+}
+
+/* Shift Only Products, NOT Heading */
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin-left: 300px; /* Only shifting the product cards */
+}
+
+/* Product Card */
+.product-card {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product-card img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+/* error Sction */
+.errorSection {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: #f8d7da; /* Light red error background */
+  color: #721c24; /* Dark red text */
+  padding: 20px;
+}
+
+.errorSection h1 {
+  font-size: 6rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.errorSection div {
+  font-size: 1.8rem;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+/* Styling the Go Back link as a button */
+.errorSection a {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #dc3545; /* Red error color */
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.errorSection a:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+
+
+
