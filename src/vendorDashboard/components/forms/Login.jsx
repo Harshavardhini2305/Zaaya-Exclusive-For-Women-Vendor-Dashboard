@@ -59,7 +59,9 @@ const Login = ({showWelcomeHandler}) => {
           
 
         }
-        window.location.reload()
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
 
     } catch (error) {
         console.error("Error during login:", error);
