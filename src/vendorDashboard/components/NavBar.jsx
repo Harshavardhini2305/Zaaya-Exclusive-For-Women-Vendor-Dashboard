@@ -5,15 +5,21 @@ const NavBar = ({ showLoginHandler, showRegisterHandler,showLogOut,logOutHandler
   return (
     <div className="navSection">
 
-      <div className="company">Vendor Dashboard</div>
+      <div className='logocontainer'>
+      <div className='logo'><label >SH</label></div>
+      <div className="company">Seller Hub</div>
+      
+      </div>
       <div className="firmName">
-        <h4>Firm Name: {firmName}</h4>
+        <h4>Trade Name: {firmName}</h4>
       </div>
 
       <div className="userAuth">
         {!showLogOut?<>
-          <span onClick={showLoginHandler}>Login/</span>
-          <span onClick={showRegisterHandler}>Register</span>
+        <div className='btn-container'>
+          <button onClick={showLoginHandler} className='btn-nav'>Login</button>
+          <button onClick={showRegisterHandler} className='btn-nav'>Register</button>
+          </div>
 
         </> :     <span onClick={logOutHandler}>Logout</span>  }
         

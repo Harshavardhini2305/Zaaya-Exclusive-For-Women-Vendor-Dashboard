@@ -85,6 +85,7 @@ const LandingPage = () => {
       
       alert("Please Login")
       setShowLogin(true)
+      setShowRegister(false)
      
     }
   }
@@ -100,6 +101,7 @@ const LandingPage = () => {
     }else{
       alert("Please Login");
       setShowLogin(true);
+      setShowRegister(false)
     }
 
 
@@ -126,6 +128,7 @@ const LandingPage = () => {
   }else{
     alert("Please Login");
     setShowLogin(true);
+    setShowRegister(false)
   }  
 }
 
@@ -137,20 +140,23 @@ const LandingPage = () => {
     <section className='landingSection'>
 
     <NavBar showLoginHandler={showLoginHandler} showRegisterHandler={showRegisterHandler}  showLogOut={ showLogOut} logOutHandler={logOutHandler}/>
+
     <div className="collectionSection">
-
-      <SideBar showFirmHandler= {showFirmHandler} 
-      showProductHandler={showProductHandler}
-      showAllProductsHandler = {showAllProductsHandler} 
-      showFirmTitle = {showFirmTitle}
-      />
-
+            <div>
+            <SideBar showFirmHandler= {showFirmHandler} 
+                  showProductHandler={showProductHandler}
+                  showAllProductsHandler = {showAllProductsHandler} 
+                  showFirmTitle = {showFirmTitle}
+                  />
+            </div>
+                  
+     
 
       {showLogin && <Login showWelcomeHandler={showWelcomeHandler}  />}
       {showRegister && <Register showLoginHandler={showLoginHandler}/>}
 
 
-     {showFirm && showLogOut && <AddFirm/>}
+     {/* {showFirm && showLogOut && <AddFirm/>} */}
      {showProduct && showLogOut &&<AddProduct/>}
      {showWelcome && <Welcome/>}
      {showAllProducts && showLogOut &&<AllProducts />}
