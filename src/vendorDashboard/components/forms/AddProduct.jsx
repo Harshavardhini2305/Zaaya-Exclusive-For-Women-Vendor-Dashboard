@@ -288,6 +288,7 @@ const AddProduct = () => {
   };
 
   return (
+    <div class="product-page">
     <div className="addProductSection">
       <form className="productForm" onSubmit={handleAddProduct}>
         <h3>Add Product</h3>
@@ -339,6 +340,7 @@ const AddProduct = () => {
           <button type="submit">Submit</button>
         </div>
       </form>
+    </div>
     </div>
   );
 };

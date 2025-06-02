@@ -493,6 +493,7 @@ body {
 
 /* ADD PRODUCT */
 
+
 .addProductSection {
   flex-grow: 1;
   padding: 20px;
@@ -575,7 +576,7 @@ select[multiple]::-webkit-scrollbar-thumb:hover {
 }
 
 button {
-  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+   background: linear-gradient(135deg, #0B1E3D, #1E4D91);
   color: white;
   border: none;
   width: 100%;
@@ -588,7 +589,7 @@ button {
 }
 
 button:hover {
-  background: linear-gradient(135deg, #ffc371, #ff5f6d);
+   background: linear-gradient(135deg, #0B1E3D, #1E4D91);
   transform: scale(1.05);
 }
 
@@ -596,6 +597,9 @@ button:hover {
 
 /* Page Container */
 /* Main Product Page */
+
+
+
 .product-page {
   display: flex;
   flex-direction: column;
@@ -681,8 +685,21 @@ button:hover {
   display: block; /* Prevents inline spacing issues */
 }
 .product-card {
-  overflow: hidden; /* Ensures no sharp edges */
+  overflow: hidden;
   border-radius: 16px; /* Matches the image */
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+.product-page {
+  min-height: 100vh;
+  overflow-y: auto;
+  width: calc(100% - 300px);
 }
 
 
@@ -697,7 +714,7 @@ button:hover {
 
 /* Delete Button */
 .product-card button {
-  background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+   background: linear-gradient(135deg, #0B1E3D, #1E4D91);
   color: white;
   border: none;
   padding: 10px 14px;
@@ -710,7 +727,7 @@ button:hover {
 }
 
 .product-card button:hover {
-  background: linear-gradient(45deg, #ff8e53, #ff6b6b);
+   background: linear-gradient(135deg, #0B1E3D, #1E4D91);
   transform: scale(1.05);
 }
 
@@ -731,7 +748,7 @@ button:hover {
 
 /* Delete Button */
 .product-card button {
-  background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+ background: linear-gradient(135deg, #0B1E3D, #1E4D91);
   color: white;
   border: none;
   padding: 10px 14px;
@@ -744,7 +761,7 @@ button:hover {
 }
 
 .product-card button:hover {
-  background: linear-gradient(45deg, #ff8e53, #ff6b6b);
+ background: linear-gradient(135deg, #0B1E3D, #1E4D91);
   transform: scale(1.05);
 }
 
