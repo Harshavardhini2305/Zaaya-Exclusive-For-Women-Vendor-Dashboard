@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from "react";
 // import './Welcome.css';
 
 const Welcome = () => {
@@ -8,7 +8,11 @@ const Welcome = () => {
       <p className="welcome-description">Discover elegance and style, curated just for you.</p>
       <p className="welcome-description">Experience fashion that empowers and inspires confidence.</p>
       <div className="loading-spinner"></div>
+
+      
     </div>
+
+    
   );
 };
 

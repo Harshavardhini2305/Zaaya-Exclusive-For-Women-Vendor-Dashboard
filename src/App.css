@@ -14,9 +14,6 @@ body {
 }
 
 
-
-
-
 /* Navigation Bar */
 .navSection {
   cursor: pointer;
@@ -24,18 +21,21 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(135deg, #1F3C4F, #537895); /* Slightly brighter on hover */
+  background: linear-gradient(135deg, #0B1E3D, #1E4D91); /* Deep to lighter blue */
   color: white;
   padding: 0 30px;
   font-size: 1.2rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow for depth */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-  backdrop-filter: blur(10px); /* Glassmorphism Effect */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 8px 30px rgba(13, 71, 161, 0.35);
+  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Navbar Links */
@@ -43,30 +43,46 @@ body {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  margin: 0 15px;
-  transition: color 0.3s ease, transform 0.2s ease;
+  margin: 0 18px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.25s ease;
 }
 
-.navSection a:hover {
-  color: #f0a500; /* Golden Accent */
-  transform: scale(1.1); /* Subtle zoom */
+.navSection a:hover,
+.navSection a:focus {
+  background-color: rgba(255, 111, 97, 0.15); /* coral red highlight */
+  color: #FF6F61;
+  transform: scale(1.1);
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 111, 97, 0.7);
 }
 
 /* Company Name Styling */
 .company {
-  font-weight: bold;
-  font-size: 2rem; /* Slightly larger for better visibility */
+  font-weight: 700;
+  font-size: 2.2rem;
   color: white;
-  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
   cursor: pointer;
-  letter-spacing: 1px; /* Adds a subtle, modern look */
+  letter-spacing: 1.5px;
+  transition: color 0.35s ease, transform 0.35s ease;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.company:hover,
+.company:focus {
+  color: #FFD700; /* gold highlight */
+  transform: scale(1.1);
+  outline: none;
+  text-shadow: 0 0 10px #FFD700;
 }
 
 /* Logo Container */
 .logocontainer {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
 }
 
 /* Box Logo with Rounded Corners */
@@ -74,45 +90,51 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 55px;
-  height: 55px;
-  background: linear-gradient(135deg, #ff7b00, #ffb700); /* Warm modern gradient */
-  border-radius: 12px; /* Slight rounded corners */
-  font-size: 1.4rem;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #FF6F61, #FF8A80); /* coral gradient */
+  border-radius: 16px;
+  font-size: 1.5rem;
   color: white;
-  font-weight: bold;
-  transition: all 0.3s ease-in-out;
+  font-weight: 700;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 14px rgba(255, 111, 97, 0.75);
+  transition: background 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+  user-select: none;
 }
 
-/* Subtle Border Glow */
 .logo::before {
   content: "";
   position: absolute;
-  inset: -3px;
-  border-radius: 15px;
-  background: linear-gradient(45deg, rgba(255, 94, 0, 0.6), rgba(255, 177, 0, 0.5));
+  inset: -5px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, rgba(255, 111, 97, 0.8), rgba(255, 138, 128, 0.7));
+  filter: blur(14px);
+  opacity: 0.85;
   z-index: -1;
-  filter: blur(10px);
-  opacity: 0.7;
+  transition: filter 0.4s ease, opacity 0.4s ease;
 }
 
-/* Hover Effects */
-.logo:hover {
-  background: linear-gradient(135deg, #e65100, #ff9800); /* Darker hover color */
-  transform: scale(1.1); /* Slight zoom effect */
+.logo:hover,
+.logo:focus {
+  background: linear-gradient(135deg, #E64A44, #FF6F61);
+  transform: scale(1.15);
+  box-shadow: 0 6px 22px rgba(230, 74, 68, 0.9);
+  outline: none;
 }
 
-.logo:hover::before {
-  filter: blur(15px);
+.logo:hover::before,
+.logo:focus::before {
+  filter: blur(22px);
   opacity: 1;
 }
 
-
-/* Smooth hover effect */
-.navSection:hover {
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+/* Smooth hover effect on navbar */
+.navSection:hover,
+.navSection:focus-within {
+  box-shadow: 0 10px 38px rgba(13, 71, 161, 0.5);
+  transform: translateY(-3px);
 }
 
 /* Wrapper for Sidebar & Content */
@@ -121,54 +143,64 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  padding-top: 80px; /* Matches the navbar height */
+  padding-top: 80px;
   overflow: hidden;
-  background-color: white;
+  background-color: #F5F7FA; /* soft light background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.hello{
 
-  text-align: center;
-  
-  
+/* Center aligned content */
+.hello {
+  display: flex;
+  justify-content: center;
   align-items: center;
+  text-align: center;
+  height: 100%;
+  padding: 30px;
+  color: #212121; /* dark text */
+  font-size: 1.3rem;
+  font-weight: 600;
 }
 
-
-/* Navigation Button */
 /* Button Container */
 .btn-container {
   display: flex;
-  align-items: center;  /* Align buttons vertically */
-  gap: 8px;  /* Add space between buttons */
+  align-items: center;
+  gap: 14px;
 }
 
 /* Navigation Button */
 .btn-nav {
-  padding: 8px 16px;
-  min-width: 100px; /* Ensures both buttons have the same width */
+  padding: 12px 24px;
+  min-width: 120px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.18);
   border: none;
   color: white;
-  font-size: 1rem;
-  border-radius: 5px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: background-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 0 10px transparent;
+  user-select: none;
 }
 
-.btn-nav:hover {
-  background: rgba(255, 255, 255, 0.3);
-  transform: scale(1.05);
+.btn-nav:hover,
+.btn-nav:focus {
+  background: #FF6F61; /* coral solid */
+  box-shadow: 0 0 18px #FF6F61;
+  transform: scale(1.1);
+  outline: none;
 }
 
 
-
-
-/* Sidebar Section */
+/* side bar */
+/* side bar */
 .sideBarSection {
   width: 260px;
   height: calc(100vh - 80px);
-  background: linear-gradient(135deg, #1F3C4F, #537895); /* Slightly brighter on hover */
+  background: linear-gradient(135deg, #0B1E3D, #1E4D91); /* Deep navy to steel blue */
   color: white;
   padding: 30px 20px;
   display: flex;
@@ -182,39 +214,78 @@ body {
 
 
 
-
-
-
-
-
+/* Sidebar Container */
 
 /* Sidebar List */
 .sideBarSection ul {
-    list-style: none;
-    padding: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
+/* Sidebar List Items */
 .sideBarSection ul li {
-    padding: 12px;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-    background: rgba(255, 255, 255, 0.1);
-    text-align: center;
+  padding: 12px 18px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(230, 74, 68, 0.1), rgba(255, 111, 97, 0.1)); /* Soft coral tone */
+  color: white;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover State for Sidebar Items */
 .sideBarSection ul li:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.05);
+  background: linear-gradient(135deg, rgba(230, 74, 68, 0.2), rgba(255, 111, 97, 0.3)); /* Coral overlay */
+  color: #FFD700; /* Gold text on hover */
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(255, 111, 97, 0.5);
 }
 
 
+
+
+
+
+.loading-overlay {
+  position: fixed; /* Cover the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px); /* Safari */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 80px;
+  height: 80px;
+  border: 12px solid #f3f3f3;
+  border-top: 12px solid #3498db;
+  border-right: 12px solid #e74c3c;
+  border-bottom: 12px solid #f1c40f;
+  border-left: 12px solid #2ecc71;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 
 /* LOGIN AND REGISTER */
@@ -293,7 +364,7 @@ body {
   padding: 14px;
   margin-top: 20px;
   margin-left: 5px;
-  background: linear-gradient(135deg, #1F3C4F, #537895); /* Slightly brighter on hover */
+  background: linear-gradient(135deg, #0B1E3D, #1E4D91); /* Slightly brighter on hover */
   border: none;
   color: white;
   font-size: 1.1rem;
@@ -745,7 +816,7 @@ button:hover {
   text-align: center;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 60%;
   transform: translate(-50%, -50%);
   width: 100%;
 }
@@ -771,7 +842,7 @@ button:hover {
   border: 6px solid rgba(0, 0, 0, 0.1);
   border-top: 6px solid #ff758c;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: spin s linear infinite;
 }
 
 @keyframes spin {
